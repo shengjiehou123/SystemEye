@@ -24,12 +24,12 @@ open class FPS: NSObject {
         super.init()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(FPS.applicationWillResignActiveNotification),
-                                               name: NSNotification.Name.UIApplication.willResignActiveNotification,
+                                               name: UIApplication.willResignActiveNotification,
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(FPS.applicationDidBecomeActiveNotification),
-                                               name: NSNotification.Name.UIApplication.didBecomeActiveNotification,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
     }
     
