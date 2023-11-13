@@ -14,12 +14,12 @@ import Foundation
 
 open class NetworkFlow: NSObject {
     
-    open weak var delegate: NetDelegate?
+    public weak var delegate: NetDelegate?
     
     private var eyeThread: Thread?
     private var timeInterval:TimeInterval!
     
-    open func open(with timeInterval:TimeInterval = 1) {
+    public func open(with timeInterval:TimeInterval = 1) {
         self.timeInterval = timeInterval
         self.close()
         self.eyeThread = Thread(target: self, selector: #selector(NetworkFlow.eyeThreadHandler), object: nil)
@@ -27,7 +27,7 @@ open class NetworkFlow: NSObject {
         self.eyeThread?.start()
     }
     
-    open func close() {
+    public func close() {
         self.eyeThread?.cancel()
         self.eyeThread = nil
     }

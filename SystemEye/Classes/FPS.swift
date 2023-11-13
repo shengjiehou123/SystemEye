@@ -14,11 +14,11 @@ import Foundation
 
 open class FPS: NSObject {
     
-    open var isEnable: Bool = true
+    public var isEnable: Bool = true
     
-    open var updateInterval: Double = 1.0
+    public var updateInterval: Double = 1.0
     
-    open weak var delegate: FPSDelegate?
+    public weak var delegate: FPSDelegate?
     
     public override init() {
         super.init()
@@ -33,14 +33,14 @@ open class FPS: NSObject {
                                                object: nil)
     }
     
-    open func open() {
+    public func open() {
         guard self.isEnable == true else {
             return
         }
         self.displayLink.isPaused = false
     }
     
-    open func close() {
+    public func close() {
         guard self.isEnable == true else {
             return
         }
