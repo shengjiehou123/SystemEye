@@ -83,7 +83,7 @@ open class FPS: NSObject {
     private lazy var displayLink:CADisplayLink = { [unowned self] in
         let new = CADisplayLink(target: self, selector: #selector(FPS.displayLinkHandler))
         new.isPaused = true
-        new.add(to: RunLoop.main, forMode: RunLoop.mode.common)
+        new.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         return new
     }()
     
